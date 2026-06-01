@@ -41,7 +41,7 @@ TUGAS-AKHIR/
 ## Memulai
 
 ### Prasyarat
-- Node.js (versi 18+)
+- Node.js
 - Elasticsearch / OpenSearch
 - Wazuh Manager
 
@@ -67,8 +67,6 @@ npm run dev
 
 ## Konfigurasi Environment
 
-Untuk menjalankan backend, Anda perlu membuat file `.env` dengan variabel berikut (contoh):
-
 ```env
 PORT=5000
 ELASTICSEARCH_URL=http://localhost:9200
@@ -78,25 +76,24 @@ WAZUH_API_URL=
 WAZUH_API_USERNAME=
 WAZUH_API_PASSWORD=
 ```
-> **Catatan:** File `.env` berisi informasi sensitif dan **tidak boleh** diunggah ke repository.
 
 ## Kesesuaian dengan Spesifikasi Sistem
-- pengumpulan log dari beberapa *host*,
-- normalisasi log ke format terstruktur,
-- penyimpanan log terpusat dengan retensi minimal 30 hari,
-- pembaruan *dashboard* dalam interval maksimal 5–10 detik,
-- pencarian dan filter log dengan respons ≤ 5 detik,
-- latensi sistem maksimal ≤ 15 detik (dari log masuk sampai hasil analisis tampil),
-- visualisasi hasil analisis log dalam *dashboard* berbasis web,
-- penggunaan solusi *open-source*.
+- Pengumpulan log dari beberapa *host*.
+- Normalisasi log ke format terstruktur.
+- Penyimpanan log terpusat dengan retensi minimal 30 hari.
+- Pembaruan *dashboard* dalam interval maksimal 5–10 detik.
+- Pencarian dan filter log dengan respons ≤ 5 detik.
+- Latensi sistem maksimal ≤ 15 detik (dari log masuk sampai hasil analisis tampil).
+- Visualisasi hasil analisis log dalam *dashboard* berbasis web.
+- Penggunaan solusi *open-source*.
 
 ## Fitur Utama
-- *Dashboard monitoring* log dan *alert* keamanan,
-- Visualisasi statistik log dan distribusi *severity*,
-- Pencarian dan *filtering* log berdasarkan waktu, *source*, *severity*, dan jenis *event*,
-- Tampilan detail *event*,
-- *Monitoring alert* keamanan dari Wazuh,
-- Retensi data log minimal 30 hari,
+- *Dashboard monitoring* log dan *alert* keamanan.
+- Visualisasi statistik log dan distribusi *severity*.
+- Pencarian dan *filtering* log berdasarkan waktu, *source*, *severity*, dan jenis *event*.
+- Tampilan detail *event*.
+- *Monitoring alert* keamanan dari Wazuh.
+- Retensi data log minimal 30 hari.
 - Pembaruan *dashboard* secara berkala untuk mendukung *monitoring* mendekati *real-time*.
 
 ## Peran Pengguna
