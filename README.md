@@ -32,30 +32,44 @@ Wazuh Manager melakukan analisis log, *rule matching*, *event correlation*, dete
 
 ```text
 TUGAS-AKHIR/
-├── frontend/                   # Aplikasi Web Frontend (Next.js & React)
-│   ├── public/                 # Aset statis (gambar, ikon)
+├── frontend/
+│   ├── public/
 │   ├── src/
-│   │   ├── components/         # Komponen UI (Grafik Chart.js, Tabel Log, Sidebar)
-│   │   ├── pages/              # Halaman utama (Dashboard, Alerts, Settings)
-│   │   ├── services/           # Logika pemanggilan API ke Backend
-│   │   ├── styles/             # Styling menggunakan Tailwind CSS
-│   │   └── utils/              # Fungsi utilitas format data
-│   ├── package.json            # Dependensi frontend
-│   └── next.config.js          # Konfigurasi Next.js
+│   │   ├── app/
+│   │   │   ├── page.tsx                 # Dashboard utama
+│   │   │   ├── login/page.tsx           # Halaman login
+│   │   │   ├── logs/page.tsx            # Monitoring log
+│   │   │   ├── alerts/page.tsx          # Monitoring alert
+│   │   │   ├── events/[id]/page.tsx     # Detail event
+│   │   │   └── layout.tsx               # Root layout
+│   │   ├── components/
+│   │   │   ├── ui/                      # Komponen UI dasar (Card, Button, dll)
+│   │   │   ├── dashboard/               # Komponen khusus dashboard (Chart, Stat)
+│   │   │   ├── logs/                    # Komponen tabel dan filter log
+│   │   │   ├── alerts/                  # Komponen list alert
+│   │   │   ├── layout/                  # Header, Sidebar, Footer
+│   │   │   └── shared/                  # AutoRefresh, LoadingSpinner
+│   │   ├── lib/                         # Konfigurasi axios (api.ts) & utils
+│   │   ├── hooks/                       # Custom hooks (useLogs, useAlerts, dll)
+│   │   ├── types/                       # Definisi TypeScript interface
+│   │   └── styles/                      # Tailwind globals.css
+│   ├── .env.local
+│   └── package.json
 │
-├── backend/                    # REST API Backend (Node.js & Express.js)
+├── backend/
 │   ├── src/
-│   │   ├── config/             # Konfigurasi koneksi (Elasticsearch, Wazuh API)
-│   │   ├── controllers/        # Logika pemrosesan endpoint API
-│   │   ├── routes/             # Definisi rute endpoint (misal: /api/logs, /api/alerts)
-│   │   ├── services/           # Kueri data ke Elasticsearch/OpenSearch & Wazuh
-│   │   └── utils/              # Middleware dan fungsi bantuan (error handling)
-│   ├── .env.example            # Template variabel environment
-│   ├── package.json            # Dependensi backend
-│   └── server.js               # Titik awal (entry point) aplikasi backend
+│   │   ├── config/                      # Config Elasticsearch & Wazuh
+│   │   ├── controllers/                 # Logika bisnis (auth, logs, alerts)
+│   │   ├── routes/                      # Definisi endpoint REST API
+│   │   ├── middleware/                  # Autentikasi session & validator
+│   │   ├── services/                    # Fetch data ke ELK & Wazuh API
+│   │   ├── utils/                       # Response formatter & logger
+│   │   └── app.ts                       # Entry point Express.js
+│   ├── .env.example
+│   └── package.json
 │
-├── .gitignore                  # Konfigurasi Git ignore
-└── README.md                   # Dokumentasi utama proyek
+├── .gitignore
+└── README.md
 ```
 
 ## Memulai
