@@ -37,8 +37,8 @@ export default function LoginPage() {
       <div className="relative w-full max-w-md">
         {/* Logo & Title */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center mb-4">
-            <img src="/cic-logo.png" alt="CIC Logo" className="h-16 w-auto brightness-0 invert opacity-90" />
+          <div className="inline-flex items-center justify-center mb-4 bg-white p-2 rounded-xl">
+            <img src="/cic-logo.png" alt="CIC Logo" className="h-14 w-auto object-contain" />
           </div>
           <h1 className="text-2xl font-bold text-white tracking-tight">CIC SecureWatch</h1>
           <p className="text-sm text-blue-300/70 mt-1">Security Monitoring Dashboard</p>

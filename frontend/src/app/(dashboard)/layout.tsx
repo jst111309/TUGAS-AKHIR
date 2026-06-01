@@ -62,7 +62,9 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       )}>
         {/* Brand */}
         <div className="h-16 flex items-center gap-3 px-5 border-b border-slate-800">
-          <img src="/cic-logo.png" alt="CIC Logo" className="h-8 w-auto brightness-0 invert opacity-80" />
+          <div className="bg-white p-1 rounded">
+            <img src="/cic-logo.png" alt="CIC Logo" className="h-8 w-auto object-contain" />
+          </div>
           <div>
             <h1 className="text-sm font-semibold text-white leading-tight">CIC SecureWatch</h1>
             <p className="text-[10px] text-slate-500 leading-tight">SIEM Monitoring</p>
