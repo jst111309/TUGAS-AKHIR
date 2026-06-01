@@ -32,10 +32,30 @@ Wazuh Manager melakukan analisis log, *rule matching*, *event correlation*, dete
 
 ```text
 TUGAS-AKHIR/
-├── frontend/
-├── backend/
-├── .gitignore
-└── README.md
+├── frontend/                   # Aplikasi Web Frontend (Next.js & React)
+│   ├── public/                 # Aset statis (gambar, ikon)
+│   ├── src/
+│   │   ├── components/         # Komponen UI (Grafik Chart.js, Tabel Log, Sidebar)
+│   │   ├── pages/              # Halaman utama (Dashboard, Alerts, Settings)
+│   │   ├── services/           # Logika pemanggilan API ke Backend
+│   │   ├── styles/             # Styling menggunakan Tailwind CSS
+│   │   └── utils/              # Fungsi utilitas format data
+│   ├── package.json            # Dependensi frontend
+│   └── next.config.js          # Konfigurasi Next.js
+│
+├── backend/                    # REST API Backend (Node.js & Express.js)
+│   ├── src/
+│   │   ├── config/             # Konfigurasi koneksi (Elasticsearch, Wazuh API)
+│   │   ├── controllers/        # Logika pemrosesan endpoint API
+│   │   ├── routes/             # Definisi rute endpoint (misal: /api/logs, /api/alerts)
+│   │   ├── services/           # Kueri data ke Elasticsearch/OpenSearch & Wazuh
+│   │   └── utils/              # Middleware dan fungsi bantuan (error handling)
+│   ├── .env.example            # Template variabel environment
+│   ├── package.json            # Dependensi backend
+│   └── server.js               # Titik awal (entry point) aplikasi backend
+│
+├── .gitignore                  # Konfigurasi Git ignore
+└── README.md                   # Dokumentasi utama proyek
 ```
 
 ## Memulai
